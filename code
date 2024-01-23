@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int solution(int n)
+{
+    int maxBinary = 0, currentBinary = 0;
+
+    while(n != 1)
+    {
+        while(n % 2 == 0)
+        {
+            n = n / 2;
+        }
+        
+        if(n == 1)
+        {
+            break;
+        }
+        
+        n = n / 2;
+        currentBinary = 0;
+
+        while(n % 2 == 0)
+        {
+            currentBinary ++;
+            n = n / 2;
+        }
+
+        if(currentBinary > maxBinary)
+        {
+            maxBinary = currentBinary;
+        }
+    }
+
+    return maxBinary;
+}
